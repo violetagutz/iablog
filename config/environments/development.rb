@@ -34,6 +34,19 @@ Rails.application.configure do
   #mailer configuration
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000  }
 
+  creds = Rails.application.credentials
+
+  config.action_mailer.delivery_method = :smtp
+  ActionMailer::Base.smtp_settings = {
+    :address        => 'smtp.mailgun.org',
+    :port           => '587',
+    :authentication => :plain,
+    :user_name      => creds.dig(:mailer, :username),
+    :password       => creds.dig(:mailer, :password),
+    :domain         => creds.dig(:mailer, :domain),
+    :enable_starttls_auto => true
+  }
+
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
