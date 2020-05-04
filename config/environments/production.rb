@@ -62,6 +62,23 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
 
+  #mailer configuration
+  config.action_mailer.default_url_options = { host: 'https://iablog.herokuapp.com/', port: 3000  }
+
+  creds = Rails.application.credentials
+
+  config.action_mailer.delivery_method = :smtp
+  ActionMailer::Base.smtp_settings = {
+    :address        => 'smtp.mailgun.org',
+    :port           => '587',
+    :authentication => :plain,
+    :user_name      => creds.dig(:mailer, :username),
+    :password       => creds.dig(:mailer, :password),
+    :domain         => creds.dig(:mailer, :domain),
+    :enable_starttls_auto => true
+  }
+
+
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
