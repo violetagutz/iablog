@@ -10,10 +10,7 @@
   </head>
 
   <body>
-    <% if user_signed_in? %>
-      <p>I'm signed in!!<p>
-      <p><%= current_user.email %></p>
-    <% end %>
+    <%= render "/layouts/navbar" %>
     <%= yield %>
   </body>
 </html>
