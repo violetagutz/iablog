@@ -1,0 +1,21 @@
+
+.container
+  - flash.each do |type, msg|
+    - if type == "notice"
+      .alert.alert-success.alert-dismissible.fade.show
+        = msg
+        %button.close{data: {dismiss: "alert"}, aria_label: "Close"}
+          %span{aria_hidden: "true"}
+            &times;
+    -  if type == "alert"
+      .alert.alert-danger.alert-dismissible.fade.show
+        = msg
+        %button.close{data: {dismiss: "alert"}, aria_label: "Close"}
+          %span{aria_hidden: "true"}
+            &times;
+    - if type == "info"
+      .alert.alert-info.alert-dismissible.fade.show
+        = msg
+        %button.close{data: {dismiss: "alert"}, aria_label: "Close"}
+          %span{aria_hidden: "true"}
+            &times;
