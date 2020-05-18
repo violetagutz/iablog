@@ -63,7 +63,7 @@ Rails.application.configure do
   config.action_mailer.perform_caching = false
 
   #mailer configuration
-  config.action_mailer.default_url_options = { host: 'https://staging-iablog.herokuapp.com' }
+  config.action_mailer.default_url_options = { host: 'https://iablog.herokuapp.com' }
 
   creds = Rails.application.credentials
 
