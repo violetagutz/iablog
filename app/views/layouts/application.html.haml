@@ -10,6 +10,7 @@
   %body
     = render "/layouts/navbar"
     = render "/layouts/notices"
-    = yield
+    .container.main-page
+      = yield
   %footer
     = render "/shared/footer"

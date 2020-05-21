@@ -1,4 +1,15 @@
-// Place all the styles related to the StaticPages controller here.
-h1 { color: green; }
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+// Extra small devices (portrait phones, less than 576px)
+// No media query for `xs` since this is the default in Bootstrap
+h1 { color: blue; }
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  h1 { color: red; }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  h1 { color: green; }
+}
+
+
