@@ -30,7 +30,7 @@ function cookieConsent() {
 
   // else remove (delete) element
   } else {
-    $('.fixed-bottom').remove();
+    $('#cookies-toast').remove();
   }
 }
 
