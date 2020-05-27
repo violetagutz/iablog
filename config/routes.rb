@@ -12,6 +12,6 @@ Rails.application.routes.draw do
   get "privacy" => "static_pages#privacy"
 
   # USERS
-  resources :users, only: [:show]
+  resources :users, only: [:show, :edit]
 
 end

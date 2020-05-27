@@ -1,1 +1,4 @@
 = @user.email
+%br
+.btn.btn-outline-primary
+  = link_to "Edit Profile", edit_user_path(current_user.id), class: "btn.btn-outline-primary"
