@@ -10,4 +10,8 @@ Rails.application.routes.draw do
   get 'contact' => "static_pages#contact"
   get "terms" => "static_pages#terms"
   get "privacy" => "static_pages#privacy"
+
+  # USERS
+  resources :users, only: [:show, :edit, :update]
+
 end

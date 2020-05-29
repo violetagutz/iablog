@@ -1,0 +1,24 @@
+.row
+  .col-md-6.offset-md-3
+    %h2 Edit Profile
+    = form_for(@user, class: "edit_form") do |f|
+      = render "devise/shared/error_messages", resource: @user
+      .form-group
+        =f.label :name
+        %br
+        = f.text_field :name, required: true, class: "form-control"
+
+      .form-group
+        =f.label :username
+        %br
+        = f.text_field :username, required: true, class: "form-control"
+
+      .form-group
+        =f.label :location
+        %br
+        = f.text_field :location, autofocus: true, class: "form-control"
+        %br
+      .actions
+        = f.submit "Update", class: "btn btn-primary", method: :update
+
+
