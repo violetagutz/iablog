@@ -26,5 +26,7 @@
         = @user.username
         %br
         %span
+      %li.list-group-item
+        = image_tag(@user.image)
     #btnPrimary.btn.btn-outline-primary
       = link_to "Edit Profile", edit_user_path(current_user.id), class: "btn.btn-outline-primary"

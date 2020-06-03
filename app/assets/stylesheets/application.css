@@ -30,6 +30,9 @@
   padding-right:30px;
 }
 
+.alert.alert-danger {
+  margin-top: 70px;
+}
 
 footer {
   position: absolute;

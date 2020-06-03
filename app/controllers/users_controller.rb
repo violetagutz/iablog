@@ -9,6 +9,7 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
+    @user.image.attach(params[:image])
     if @user.update(user_params)
       flash[:success] = "Profile Updated!"
       redirect_to @user
@@ -20,7 +21,7 @@ class UsersController < ApplicationController
  private
 
    def user_params
-     params.require(:user).permit(:name, :username, :location)
+     params.require(:user).permit(:name, :username, :location, :image)
    end
 end
 
