@@ -9,8 +9,7 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    @user.image.attach(params[:image])
-    if @user.update(user_params)
+    if @user.update_user_with_image(params[:image], user_params)
       flash[:success] = "Profile Updated!"
       redirect_to @user
     else

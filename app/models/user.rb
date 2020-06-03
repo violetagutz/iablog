@@ -7,4 +7,8 @@ class User < ApplicationRecord
 
   has_one_attached :image
 
+  def update_user_with_image(image, user_params)
+    self.image.attach(image)
+    self.update(user_params)
+  end
 end
