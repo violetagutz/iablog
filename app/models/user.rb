@@ -9,6 +9,6 @@ class User < ApplicationRecord
 
   def update_user_with_image(image, user_params)
     self.image.attach(image)
-    self.update!(user_params)
+    self.update(user_params)
   end
 end
