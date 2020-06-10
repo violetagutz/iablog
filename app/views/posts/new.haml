@@ -1,0 +1,15 @@
+.row
+  .col-md-6.offset-md-3
+    %h1 Write an Article
+    %br
+    = form_for @post do |f|
+      .form-group
+        = f.label :title
+        = f.text_field :title, class: "form-control"
+      %br
+      .form-group
+        = f.label :content
+        = f.text_area :content, class: "form-control"
+      %br
+      .actions
+        = f.submit "Create Article", class: "btn btn-primary"
