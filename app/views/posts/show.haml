@@ -1,7 +1,11 @@
 .row
   .col-md-6.offset-md-2
     %h2 Articles
-    = @post.title
-    %br
-    = @post.content
+    %li.list-group-item
+      %p
+      TITLE
+      %br
+      = @post.title
+    %li.list-group-item
+      = @post.content
 

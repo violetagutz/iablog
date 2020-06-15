@@ -41,3 +41,9 @@ footer {
   width: 100%;
   height: 50px;
 }
+
+#btnPrimary {
+  padding: 3px;
+  margin-top: 20px;
+  margin-left: 20px
+}

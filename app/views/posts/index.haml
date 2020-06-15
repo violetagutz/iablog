@@ -1,0 +1,11 @@
+.row
+  .col-sm-6.offset-sm-3
+    %h1 My Articles
+    - @posts.each do |post|
+      %li.list-group-item
+        = post.title
+        %br
+          = post.content
+      %br
+
+
