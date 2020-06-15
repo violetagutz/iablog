@@ -3,6 +3,7 @@
     %h1 Write an Article
     %br
     = form_for @post do |f|
+      = render "devise/shared/error_messages", resource: @post
       .form-group
         = f.label :title
         = f.text_field :title, class: "form-control"
