@@ -11,3 +11,7 @@ User.create!(name:  "violeta",
              password:              "foobar",
              password_confirmation: "foobar")
 
+User.create!(name: "Monty",
+             email: "myviatech@gmail.com",
+             password:           "foobar",
+             password_confirmation: "foobar")
