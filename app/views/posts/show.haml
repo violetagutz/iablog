@@ -1,11 +1,11 @@
 .row
   .col-md-6.offset-md-2
-    %h2 Articles
-    %li.list-group-item
-      %p
-      TITLE
-      %br
-      = @post.title
-    %li.list-group-item
-      = @post.content
-
+    .card
+      .card-header
+        = @post.title
+      .card-body
+        %blockquote.blockquote
+          = @post.content
+        %br
+        %footer.blockquote-footer
+          = @post.user.name

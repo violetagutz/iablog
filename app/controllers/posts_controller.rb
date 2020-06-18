@@ -1,8 +1,16 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
-
+  #return list of posts
   def index
-    @posts = Post.all
+    #ask for an user with user_id, if its true, get it using a hash id as a key and params with the  value)
+    if params[:user_id]
+      user = User.find_by(id: params[:user_id])
+      #get post of that single user(asigned already above) or just using user.posts
+      @posts = Post.where(user_id: user.id)
+    else
+      #if theres no user id show all posts of all users
+      @posts = Post.all
+    end
   end
 
   def new
@@ -29,5 +37,4 @@ private
   def post_params
     params.require(:post).permit(:title, :content)
   end
-
 end

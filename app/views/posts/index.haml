@@ -1,11 +1,20 @@
 .row
   .col-sm-6.offset-sm-3
-    %h1 My Articles
-    - @posts.each do |post|
-      %li.list-group-item
-        = post.title
-        %br
-          = post.content
-      %br
-
-
+    %h1.mb-1 Articles
+    .list-group
+      .d-fle.w-100.justify-content-between
+        - @posts.each do |post|
+          .list-group-item.list-group-item-action
+            = link_to post_path(post.id) do
+              %h5.mb-1
+                = post.title
+              %small.timestamp
+                Posted
+                = time_ago_in_words(post.created_at)
+                ago.
+                %br
+                %br
+              .mb-1
+                Author:
+                = link_to post.user.name, posts_path(user_id: post.user.id)
+              %br
