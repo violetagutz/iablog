@@ -6,10 +6,16 @@ class PostsController < ApplicationController
     if params[:user_id]
       user = User.find_by(id: params[:user_id])
       #get post of that single user(asigned already above) or just using user.posts
-      @posts = Post.where(user_id: user.id)
+      @posts = Post.where({user_id: user.id})
+      if user == current_user
+        @page_title = "My Articles"
+      else
+        @page_title = "Articles written by #{user.name}"
+      end
     else
       #if theres no user id show all posts of all users
       @posts = Post.all
+      @page_title = "All Articles"
     end
   end
 

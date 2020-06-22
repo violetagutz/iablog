@@ -1,6 +1,7 @@
 .row
   .col-sm-6.offset-sm-3
-    %h1.mb-1 Articles
+    %h1.mb-1
+      = @page_title
     .list-group
       .d-fle.w-100.justify-content-between
         - @posts.each do |post|
