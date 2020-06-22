@@ -37,6 +37,11 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @user = @post.user
+    @username = @user.username
+    #create a new comment
+    @comment = Comment.new
+    @comment.post_id = @post.id
+    @comment.user_id = @user.id
   end
 
 private

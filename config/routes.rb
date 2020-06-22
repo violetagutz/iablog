@@ -16,4 +16,7 @@ Rails.application.routes.draw do
 
   #POSTS
   resources :posts, only: [:create, :new, :show, :index]
+
+  #COMENTS
+  resources :comments
 end

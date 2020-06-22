@@ -1,0 +1,10 @@
+%h6 What do you think about this article? Write a comment below!
+= form_for @comment do |f|
+  = render "devise/shared/error_messages", resource: @comment
+  %br
+  .form-group
+    = f.text_area :content, class: "form-control"
+  %br
+  .actions
+    = f.submit "Comment", class: "btn btn-primary"
+

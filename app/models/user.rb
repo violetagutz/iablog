@@ -9,6 +9,8 @@ class User < ApplicationRecord
 
   has_many :posts
 
+  has_many :comments
+
 
   def update_user_with_image(image, user_params)
     self.image.attach(image)
