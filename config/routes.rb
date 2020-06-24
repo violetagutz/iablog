@@ -18,5 +18,5 @@ Rails.application.routes.draw do
   resources :posts, only: [:create, :new, :show, :index]
 
   #COMENTS
-  resources :comments
+  resources :comments, only: [:create]
 end

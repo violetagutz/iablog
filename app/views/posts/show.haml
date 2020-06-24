@@ -17,3 +17,9 @@
     %br
     %br
     = render partial: "comments/form"
+    %h3 All Comments
+    %small
+    = ( @post.comments.size )
+    %br
+    = render partial: 'comments/comment', collection: @post.comments.reverse
+
