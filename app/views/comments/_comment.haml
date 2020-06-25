@@ -1,3 +1,14 @@
-= link_to @user.name, posts_path(user_id: @user.id)
-%p.comment
-  = @comment.content
+.row
+  .col-md-12
+    .list-group-flush
+      .d-fle.w-100.justify-content-between
+        - @comments.each do |comment|
+          .list-group-item.list-group-item-action
+            = link_to @user.name, posts_path(user_id: @user.id)
+            = comment.content
+            %small.timestamp
+              Posted
+              = time_ago_in_words(comment.created_at)
+              ago.
+              %br
+              = link_to 'Delete', comment_path(comment.id), :method => :delete

@@ -38,6 +38,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @user = @post.user
     @comment = Comment.new
+    @comments = Comment.where(post_id: @post.id)
   end
 
 private
