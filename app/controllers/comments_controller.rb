@@ -6,7 +6,9 @@ class CommentsController < ApplicationController
     comment.user_id = current_user.id
     user = comment.post.user
     if comment.save
-      CommentMailer.with(user: user).comment_mail.deliver_now
+      unless user == current_user
+        CommentMailer.with(user: user).comment_mail.deliver_now
+      end
       redirect_to post_path(comment.post.id)
     end
   end
