@@ -4,8 +4,11 @@ class CommentsController < ApplicationController
   def create
     comment = Comment.new(comment_params)
     comment.user_id = current_user.id
-    comment.save
-    redirect_to post_path(comment.post.id)
+    user = comment.post.user
+    if comment.save
+      CommentMailer.with(user: user).comment_mail.deliver_now
+      redirect_to post_path(comment.post.id)
+    end
   end
 
 
