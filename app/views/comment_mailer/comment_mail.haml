@@ -2,3 +2,5 @@
   Hi
   = @user.name
 %p Someone commented your post! Click the link below to see it:
+%br
+= link_to "click here", post_url(@post.id)

@@ -5,11 +5,12 @@ class CommentsController < ApplicationController
     comment = Comment.new(comment_params)
     comment.user_id = current_user.id
     user = comment.post.user
+    post = comment.post
     if comment.save
       unless user == current_user
-        CommentMailer.with(user: user).comment_mail.deliver_now
+        CommentMailer.with(user: user, post: post).comment_mail.deliver_now
       end
-      redirect_to post_path(comment.post.id)
+      redirect_to post_path(post.id)
     end
   end
 
