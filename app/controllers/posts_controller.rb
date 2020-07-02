@@ -19,6 +19,11 @@ class PostsController < ApplicationController
     end
   end
 
+  def search
+    keyword = params[:q]
+    @posts = Post.where("title ILIKE ?", "%#{keyword}%")
+  end
+
   def new
     @post = Post.new
   end

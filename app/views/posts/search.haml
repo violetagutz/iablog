@@ -1,0 +1,10 @@
+.row
+  .col-sm-6.offset-sm-3
+    %h1 Searching results
+    .list-group
+      .d-fle.w-100.justify-content-between
+        - @posts.each do |post|
+          .list-group-item.list-group-item-action
+            = link_to post_path(post.id) do
+              %h5.mb-1
+                = post.title
