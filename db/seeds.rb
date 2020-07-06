@@ -8,13 +8,13 @@
 #create a main sample user.
 
 #USERS
-user_one = User.create!(name:  "Violeta",
-             email: "violetacastrogutierrez@gmail.com",
+user_one = User.create!(name:  "Heather",
+                        email: "green96.h@gmail.com",
              password:              "foobar",
              password_confirmation: "foobar",
              confirmed_at: Time.now)
 
-user_two = User.create!(name: "Monty",
+user_two = User.create!(name: "Robert",
              email: "myviatech@gmail.com",
              password:           "foobar",
              password_confirmation: "foobar",
